@@ -18,7 +18,7 @@ sap.ui.define([
 
             // set i18n model on view
             var i18nModel = new ResourceModel({
-                bundleName: "sap.ui.demo.walkthough.i18n.i18n"
+                bundleName: "sap.ui.demo.walkthrough.i18n.i18n"
             });
             this.getView().setModel(i18nModel, "i18n");
         },
