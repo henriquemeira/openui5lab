@@ -31,7 +31,7 @@ sap.ui.define([
             var i18nModel = new ResourceModel({
                 bundleName : "sap.ui.demo.walkthrough.i18n.i18n"
             });
-            this.setModel(i18Model, "i18n");
+            this.setModel(i18nModel, "i18n");
         }
     });
 });
