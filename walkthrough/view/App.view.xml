@@ -23,7 +23,7 @@
                                 width="60%"/>
                             <Text 
                                 text="Olá {/recipient/name}"
-                                class="sapUiSmallMargin">
+                                class="sapUiSmallMargin"/>
                         </content>
                     </Panel>
                 </content>
