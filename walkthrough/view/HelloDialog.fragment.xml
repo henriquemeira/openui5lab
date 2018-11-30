@@ -6,7 +6,7 @@ xmlns:core="sap.ui.core">
         title="Hello {/recipient/name}">
         <beginButton>
             <Button 
-                text="<{i18n>dialogCloseButtonText}"
+                text="{i18n>dialogCloseButtonText}"
                 press="onCloseDialog" />
         </beginButton>
     </Dialog>
