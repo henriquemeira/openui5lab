@@ -23,7 +23,7 @@ sap.ui.define([
             this.setModel(oModel);
 
             // set dialog
-            this._helloDialog = HelloDialog(this.getRootControl());
+            this._helloDialog = new HelloDialog(this.getRootControl());
             
         },
 
