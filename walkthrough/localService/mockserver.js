@@ -6,7 +6,7 @@ sap.ui.define([
 		init: function () {
 			// create
 			var oMockServer = new MockServer({
-                rootUri: "./localService/mockdata/Invoices.json"
+                rootUri: "https://openui5lab.netlify.com/walkthrough/localService/mockdata/Invoices.json"
 			}); 
 			var oUriParameters = jQuery.sap.getUriParameters();
 			// configure
