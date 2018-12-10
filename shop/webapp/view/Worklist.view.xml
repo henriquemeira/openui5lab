@@ -22,6 +22,9 @@
 					sorter: {
 						path: 'ProductName',
 						descending: false
+					},
+					parameters: {
+						'expand': 'Supplier'
 					}
 				}"
 				noDataText="{worklistView>/tableNoDataText}"
@@ -45,10 +48,34 @@
 
 				<columns>
 					<Column id="nameColumn">
-						<Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
+						<Text
+							id="nameColumnTitle"
+							text="{i18n>TableNameColumnTitle}"/>
 					</Column>
-					<Column id="unitNumberColumn" hAlign="End">
-						<Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
+					<Column
+						id="supplierNameColumn"
+						demandPopin="false"
+						minScreenWidth="Tablet">
+						<Text text="{i18n>TableSupplierColumnTitle}"/>
+					</Column>
+					<Column
+						id="unitPriceColumn"
+						hAlign="End"
+						demandPopin="true"
+						minScreenWidth="Tablet">
+						<Text text="{i18n>TablePriceColumnTitle}"/>
+					</Column>
+					<Column
+						id="unitsOnOrderColumn"
+						demandPopin="true"
+						minScreenWidth="Tablet"
+						hAlign="End">
+						<Text text="{i18n>TableUnitsOrderedColumnTitle}"/>
+					</Column>
+					<Column
+						id="unitsInStockColumn"
+						hAlign="End">
+						<Text text="{i18n>TableUnitsInStockColumnTitle}"/>
 					</Column>
 				</columns>
 
@@ -57,13 +84,25 @@
 						type="Navigation"
 						press="onPress">
 						<cells>
-							<ObjectIdentifier
-								title="{ProductName}"/>
-							<ObjectNumber
-								number="{
-									path: 'UnitsInStock',
-									formatter: '.formatter.numberUnit'
-								}"/>
+					<ObjectIdentifier
+						title="{ProductName}"/>
+					<Text text = "{Supplier/CompanyName}"/>
+					<ObjectNumber
+						unit="EUR"
+						number="{
+						path: 'UnitPrice',
+						formatter: '.formatter.numberUnit'
+						}"/>
+					<ObjectNumber
+						number="{UnitsOnOrder}"
+						unit="PC"/>
+					<ObjectNumber
+						number="{UnitsInStock}"
+						unit="PC"
+						state="{
+						path: 'UnitsInStock',
+						formatter: '.formatter.quantityState'
+						}"/>
 						</cells>
 					</ColumnListItem>
 				</items>
