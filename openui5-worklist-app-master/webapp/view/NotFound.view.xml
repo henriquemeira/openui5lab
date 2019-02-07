@@ -1,0 +1,24 @@
+<mvc:View
+	controllerName="sap.ui.demo.worklist.controller.NotFound"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<MessagePage
+		title="{i18n>notFoundTitle}"
+		text="{i18n>notFoundText}"
+		icon="sap-icon://document"
+		id="page"
+		description="">
+		<!--
+		<customDescription>
+			<Link id="worklistLink" text="{i18n>backToWorklist}" press=".onLinkWorklistPressed"/>
+			<Link id="toolpageLink" text="{i18n>backToToolpage}" press=".onLinkToolpagePressed"/>
+		</customDescription>
+		-->
+		<buttons>
+			<Button id="worklistBtnLink" text="{i18n>backToWorklist}" press=".onLinkWorklistPressed" type="Transparent"/>
+			<Button id="toolpageBtnLink" text="{i18n>backToToolpage}" press=".onLinkToolpagePressed"  type="Transparent"/>
+		</buttons>
+	</MessagePage>
+
+</mvc:View>
