@@ -18,6 +18,10 @@
 				"settings": {
 					"odataVersion": "2.0",
 					"localUri": "localService/metadata.xml"
+				},
+				"init_data_alias": {
+					"uri": "model/init_data.json",
+					"type": "JSON"
 				}
 			}
 		}
@@ -70,6 +74,10 @@
 				}
 			},
 			"": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "init_data_alias"
+			},
+			"aa": {
 				"dataSource": "mainService",
 				"preload": true
 			}
@@ -83,7 +91,7 @@
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"bypassed": {
-					"target": ["notFound"]
+					"target": "notFound"
 				},
 				"async": true
 			},
@@ -92,17 +100,17 @@
 				{
 					"pattern": "",
 					"name": "toolpage",
-					"target": ["toolpage"]
+					"target": "toolpage"
 				},
 				{
 					"pattern": "worklist",
 					"name": "worklist",
-					"target": ["worklist"]
+					"target": "worklist"
 				},
 				{
 					"pattern": "Objects/{objectId}",
 					"name": "object",
-					"target": ["object"]
+					"target": "object"
 				}
 			],
 
