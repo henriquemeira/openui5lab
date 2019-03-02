@@ -4,7 +4,7 @@ sap.ui.define([
 	"use strict";
 	return BaseController.extend("sap.ui.demo.nav.controller.NotFound", {
 		onInit: function () {
-			var oRouter, oTarget;
+         var oRouter, oTarget;
 			oRouter = this.getRouter();
 			oTarget = oRouter.getTarget("notFound");
 			oTarget.attachDisplay(function (oEvent) {
