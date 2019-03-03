@@ -75,6 +75,10 @@
 			"name": "employeeList",
 			"target": "employees"
 		   }, {
+			"pattern": "employees/overview",
+			"name": "employeeOverview",
+			"target": ["employeeOverviewTop", "employeeOverviewContent"]
+		   },{
 			"pattern": "employees/{employeeId}",
 			"name": "employee",
 			"target": "employee"
@@ -125,6 +129,28 @@
 				  "viewPath": "sap.ui.demo.nav.view.employee",
 				  "viewName": "ResumeNotes",
 				  "controlId": "notesTab",
+				  "controlAggregation": "content"
+			  },
+			  "employeeOverview": {
+				  "viewId": "employeeOverview",
+				  "viewPath": "sap.ui.demo.nav.view.employee.overview",
+				  "viewName": "EmployeeOverview",
+				  "viewLevel" : 2
+			  },
+			  "employeeOverviewTop": {
+				  "viewId": "employeeOverviewTop",
+				  "parent": "employeeOverview",
+				  "viewPath": "sap.ui.demo.nav.view.employee.overview",
+				  "viewName": "EmployeeOverviewTop",
+				  "controlId": "EmployeeOverviewParent",
+				  "controlAggregation": "content"
+			  },
+			  "employeeOverviewContent": {
+				  "viewId": "employeeOverviewContent",
+				  "parent": "employeeOverview",
+				  "viewPath": "sap.ui.demo.nav.view.employee.overview",
+				  "viewName": "EmployeeOverviewContent",
+				  "controlId": "EmployeeOverviewParent",
 				  "controlAggregation": "content"
 			  }
 		   }
