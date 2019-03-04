@@ -24,7 +24,7 @@ sap.ui.define([
 
 			oRouter.attachRouteMatched(function (oEvent){
 				var sRouteName = oEvent.getParameter("name");
-				// do something, i.e. send usage statistics to backend
+				// do something, i.e. send usage statistics to back end
 				// in order to improve our app and the user experience (Build-Measure-Learn cycle)
 				jQuery.sap.log.info("User accessed route " + sRouteName + ", timestamp = " + new Date().getTime());
 			});
