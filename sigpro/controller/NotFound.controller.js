@@ -1,0 +1,1 @@
+sap.ui.define(["./BaseController"],function(o){"use strict";return o.extend("co.h2a.sigpro.ui.controller.NotFound",{onLinkWorklistPressed:function(){this.getRouter().navTo("worklist")},onLinkToolpagePressed:function(){this.getRouter().navTo("toolpage")}})});

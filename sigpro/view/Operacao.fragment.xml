@@ -1,0 +1,98 @@
+
+<c:FragmentDefinition
+    xmlns="sap.ui.table"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:f="sap.f"
+    xmlns:grid="sap.ui.layout.cssgrid">
+    
+    <semantic:SemanticPage
+        id="fragmentPageOperacao"
+        class="sapUiContentPadding" 
+        headerPinnable="true"
+        toggleHeaderOnTitleClick="true"
+        preserveHeaderStateOnScroll="false"
+        showFooter="true">	
+
+        <semantic:titleHeading>
+            <m:Title text="Operação" />
+        </semantic:titleHeading>
+
+        <semantic:content>
+            <m:Panel width="100%">
+                <m:headerToolbar>
+                    <m:Toolbar height="3rem">
+                        <m:Title text="Recommended designs for content, used in the GridList"/>
+                    </m:Toolbar>
+                </m:headerToolbar>
+                <m:content>
+                    <f:GridList
+                        id="gridList1"
+                        headerText="GridList, using GridBoxLayout - with ObjectStatus or InfoLabel (boxWidth 17.5rem)">
+
+                        <f:customLayout>
+                            <grid:GridBoxLayout boxWidth="17.5rem"/>
+                        </f:customLayout>
+
+                        <m:CustomListItem>
+                            <m:VBox height="100%">
+                                <m:VBox justifyContent="SpaceBetween">
+                                    <m:layoutData>
+                                        <m:FlexItemData growFactor="1" shrinkFactor="0" /><!-- Don't shrink below minimum size. Fill space if available. -->
+                                    </m:layoutData>
+                                    <m:VBox class="sapUiSmallMargin">
+                                        <m:HBox justifyContent="SpaceBetween">
+                                            <c:Icon src="sap-icon://org-chart" size="2.625rem" color="Default" class="sapUiTinyMarginBottom"/>
+                                            <m:ObjectStatus text="Positive Status" state="Success" />
+                                        </m:HBox>
+                                        <m:Title text="Title" wrapping="true"/>
+                                        <m:Label text="Subtitle" wrapping="true" class="sapUiTinyMarginBottom"/>
+                                        <m:Text text="A great description with useful information about this project. Lorem ipsum dolor sit amet, consetetur sadipscing elitr" wrapping="true"/>
+                                    </m:VBox>
+                                    <m:OverflowToolbar design="Solid">
+                                        <m:ToolbarSpacer/>
+                                        <m:Button icon="sap-icon://edit" type="Transparent"/>
+                                        <m:Button icon="sap-icon://delete" type="Transparent"/>
+                                        <m:Button icon="sap-icon://message-information" type="Transparent"/>
+                                    </m:OverflowToolbar>
+                                </m:VBox>
+                            </m:VBox>
+                        </m:CustomListItem>
+
+                        <m:CustomListItem>
+                            <m:VBox height="100%">
+                                <m:VBox justifyContent="SpaceBetween">
+                                    <m:layoutData>
+                                        <m:FlexItemData growFactor="1" shrinkFactor="0" /><!-- Don't shrink below minimum size. Fill space if available. -->
+                                    </m:layoutData>
+                                    <m:VBox class="sapUiSmallMargin">
+                                        <m:HBox justifyContent="SpaceBetween">
+                                            <c:Icon src="sap-icon://org-chart" size="2.625rem" color="Default" class="sapUiTinyMarginBottom"/>
+                                            <m:ObjectStatus text="Positive Status" state="Success" />
+                                        </m:HBox>
+                                        <m:Title text="Title" wrapping="true"/>
+                                        <m:Label text="Subtitle" wrapping="true" class="sapUiTinyMarginBottom"/>
+                                        <m:Text text="A great description with useful information about this project. Lorem ipsum dolor sit amet, consetetur sadipscing elitr" wrapping="true"/>
+                                    </m:VBox>
+                                    <m:OverflowToolbar design="Solid">
+                                        <m:ToolbarSpacer/>
+                                        <m:Button icon="sap-icon://edit" type="Transparent"/>
+                                        <m:Button icon="sap-icon://delete" type="Transparent"/>
+                                        <m:Button icon="sap-icon://message-information" type="Transparent"/>
+                                    </m:OverflowToolbar>
+                                </m:VBox>
+                            </m:VBox>
+                        </m:CustomListItem>
+
+
+                    </f:GridList>
+                </m:content>
+                
+            </m:Panel>
+
+        </semantic:content>
+
+    </semantic:SemanticPage>
+
+</c:FragmentDefinition>

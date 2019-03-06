@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SIGPRO</title>
+
+	<!-- Bootstrapping UI5 -->
+	<script id="sap-ui-bootstrap"
+		src="resources/sap-ui-core.js"
+		data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_belize_plus"
+		data-sap-ui-compatVersion="edge"
+		data-sap-ui-resourceRoots='{"co.h2a.sigpro.ui": "./"}'
+		data-sap-ui-frameOptions="trusted"
+
+		data-sap-ui-xx-waitForTheme="true"
+		data-sap-ui-onInit="module:sap/ui/core/ComponentSupport"
+		data-sap-ui-async="true"
+		
+		data-sap-ui-language="pt-BR">
+	</script>
+
+<!--<script>
+	sap.ui.getCore().attachInit(function () {
+		sap.ui.require([
+			"sap/m/Shell",
+			"sap/ui/core/ComponentContainer"
+		], function (Shell, ComponentContainer) {
+			new Shell({
+				appWidthLimited : false,
+				app: new ComponentContainer({
+					height : "100%",
+					name : "co.h2a.sigpro.ui"
+				})
+			}).placeAt("content");
+		});
+	});
+</script>-->
+
+
+</head>
+
+<body class="sapUiBody">
+  <div data-sap-ui-component data-name="co.h2a.sigpro.ui" data-id="container" data-settings='{"id" : "sigpro-ui"}'></div>
+</body>
+
+<!-- UI Content -->
+<!--<body class="sapUiBody" id="content">-->
+
+	<!--
+	<div 
+		data-sap-ui-component 
+		data-name="co.h2a.sigpro.ui" 
+		data-id="container" 
+		data-settings='{"id" : "toolpage"}'>
+	</div>
+	-->
+<!--</body>-->
+</html>

@@ -1,0 +1,54 @@
+<mvc:View
+    controllerName="co.h2a.sigpro.ui.controller.App"
+	displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	busyIndicatorDelay="0">
+
+	<Shell id="idAppShell"
+		   appWidthLimited = "false">
+
+
+		<Page id="idAppShellPage">
+
+			<headerContent>
+				<OverflowToolbar>
+					<Button icon="sap-icon://home" press="onHome" />
+
+
+					<MenuButton icon="sap-icon://menu2" text="Menu" buttonMode="Regular" type="Default">
+						<menu>
+							<Menu>
+								<items>
+									<MenuItem text="Início" icon="sap-icon://home" press="onHome" />
+									<MenuItem text="{i18n>Menu.InvoiceList}" icon="sap-icon://sales-document" press="onSelectInvoiceList" />
+									<MenuItem text="{i18n>Menu.Logoff}" icon="sap-icon://log" press="onLogoff"/>
+								</items>
+							</Menu>
+						</menu>
+					</MenuButton>
+
+
+					<ToolbarSpacer />
+
+					<!-- Middle -->
+					<Title text="{i18n>appTitle}" />
+					<ToolbarSpacer />
+
+					<!-- Right -->
+					<Button id="btLogin" tooltip="{i18n>Menu.Login}" icon="sap-icon://customer" press="onLogin" />
+					<!--<Button id="btSignup" tooltip="{i18n>Menu.Signup}" icon="sap-icon://leads" press="onSignup" />-->
+
+				</OverflowToolbar>
+			</headerContent>
+			<content>
+				<App id="idAppControl"/>
+			</content>
+		</Page>
+
+
+
+	</Shell>
+
+
+</mvc:View>

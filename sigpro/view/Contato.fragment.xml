@@ -1,0 +1,102 @@
+<c:FragmentDefinition
+    xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    xmlns:semantic="sap.f.semantic"
+    controllerName="co.h2a.sigpro.ui.controller.Contato">
+    
+    <semantic:SemanticPage
+        id="fragmentPageContatos"
+        class="sapUiContentPadding" 
+        headerPinnable="true"
+        toggleHeaderOnTitleClick="true"
+        preserveHeaderStateOnScroll="false"
+        titleAreaShrinkRatio="1:1.6:1.6"
+        showFooter="true">	
+
+        <semantic:titleHeading>
+            <m:Title text="Contatos" />
+        </semantic:titleHeading>
+
+        <semantic:content>
+            <Table
+                id="tableContatos"
+                class="sapUiContentPadding" 
+                rows="{contactModel>/}"
+                noData="Nenhum contato"
+                selectionBehavior="RowSelector"
+                selectionMode="MultiToggle"
+                alternateRowColors="true"
+                enableBusyIndicator="true"
+                enableCellFilter="true"
+                enableColumnFreeze="true"
+                enableColumnReordering="true"
+                showColumnVisibilityMenu="true"
+                showOverlay="false"
+                threshold="10"
+                visibleRowCountMode="Auto"
+                width="auto"
+                footer="Total de registros:">
+                <columns>
+                    <Column
+                        autoResizable="true"
+                        filterProperty="name"
+                        sortProperty="name"
+                        showSortMenuEntry="true">
+                        <m:Label text="{i18n>contactName}" />
+                        <template>
+                            <m:Text text="{contactModel>name}" wrapping="true" />
+                        </template>
+                    </Column>
+                    <Column>
+                        <m:Label text="{i18n>contactLastName}" />
+                        <template>
+                            <m:Text text="{contactModel>lastName}" wrapping="true" />
+                        </template>
+                    </Column>
+                    <Column>
+                        <m:Label text="{i18n>contactEmail}" />
+                        <template>
+                            <m:Text text="{contactModel>email}" wrapping="false" />
+                        </template>
+                    </Column>
+
+                    <Column
+                        sortProperty="company"
+                        autoResizable="true">
+                        <m:Label text="{i18n>contactCompany}" />
+                        <template>
+                            <m:Text text="{contactModel>company}" wrapping="false" />
+                        </template>
+                    </Column>
+
+                    <Column
+                        autoResizable="true"
+                        hAlign="Center">
+                        <m:Label text="{i18n>contactPhone}" />
+                        <template>
+                            <m:Text text="{contactModel>phone}" wrapping="true" />
+                        </template>
+                    </Column>
+                    <Column
+                        autoResizable="true">
+                        <m:Label text="{i18n>contactAddress}" />
+                        <template>
+                            <m:Text text="{contactModel>address}" wrapping="false" />
+                        </template>
+                    </Column>
+                </columns>
+
+                <footer>
+
+                </footer>
+            </Table>
+
+
+        </semantic:content>
+
+    </semantic:SemanticPage>
+
+</c:FragmentDefinition>

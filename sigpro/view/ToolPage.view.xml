@@ -1,0 +1,155 @@
+<core:View height="100%"
+		   xmlns:core="sap.ui.core"
+		   xmlns="sap.m"
+		   xmlns:tnt="sap.tnt"
+		   xmlns:t="sap.ui.table"
+		   xmlns:semantic="sap.f.semantic"
+		   xmlns:html="http://www.w3.org/1999/xhtml"
+		   xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+		   controllerName="co.h2a.sigpro.ui.controller.ToolPage">
+	<tnt:ToolPage id="toolPage">
+
+
+		<tnt:header>
+			<tnt:ToolHeader>
+				<Button id="sideNavigationToggleButton"
+						icon="sap-icon://menu2"
+						type="Transparent"
+						press="onSideNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+
+
+				<ToolbarSpacer width="20px" />
+				<!--
+				<Button text="File" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Edit" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="View" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Navigate" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Code" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Refactor" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Run" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Tools" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				-->
+
+				<tnt:ToolHeaderUtilitySeparator />
+
+				<ToolbarSpacer>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px" />
+					</layoutData>
+				</ToolbarSpacer>
+
+				<Button text="Joaquim Silva" type="Transparent" press="handleUserNamePress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+
+			</tnt:ToolHeader>
+		</tnt:header>
+
+
+		<tnt:sideContent>
+			<tnt:SideNavigation expanded="true"
+								itemSelect="onItemSelect">
+				<tnt:NavigationList items="{path: '/navigation'}">
+					<tnt:NavigationListItem text="{title}"
+											icon="{icon}"
+											enabled="{enabled}"
+											expanded="{expanded}"
+											items="{items}"
+											key="{key}">
+						<tnt:NavigationListItem text="{title}"
+												key="{key}"
+												enabled="{enabled}">
+						</tnt:NavigationListItem>
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+
+				<tnt:fixedItem>
+					<tnt:NavigationList items="{path: '/fixedNavigation'}">
+						<tnt:NavigationListItem text="{title}"
+												icon="{icon}">
+						</tnt:NavigationListItem>
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+				
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+
+		<tnt:mainContents>
+			<NavContainer id="pageContainer" initialPage="pageFaturamento">
+				<pages>
+
+					<Page id="pageOperacao" showHeader="false">
+						<core:Fragment fragmentName="co.h2a.sigpro.ui.view.Operacao" type="XML"/>
+					</Page>
+					
+					<Page id="pageContatos" showHeader="false">
+						<core:Fragment fragmentName="co.h2a.sigpro.ui.view.Contato" type="XML"/>
+					</Page>
+
+					<Page id="pageFaturamento" showHeader="false">
+						<core:Fragment fragmentName="co.h2a.sigpro.ui.view.Faturamento" type="XML"/>
+					</Page>
+
+					<Page id="pageCep" showHeader="false">
+						<core:Fragment fragmentName="co.h2a.sigpro.ui.view.Cep" type="XML"/>
+					</Page>
+					
+					<ScrollContainer id="____pageCep"
+					                 horizontal="false"
+									 vertical="true"
+									 height="100%">
+						
+						<semantic:SemanticPage
+							id="pageFormCep"
+							headerPinnable="false"
+							toggleHeaderOnTitleClick="false">
+							<semantic:content>
+								<core:Fragment fragmentName="co.h2a.sigpro.ui.view.Cep" type="XML"/>
+							</semantic:content>
+						</semantic:SemanticPage>
+
+					</ScrollContainer>
+
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</core:View>

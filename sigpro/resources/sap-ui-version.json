@@ -1,0 +1,50 @@
+{
+	"name": "sigpro-app",
+	"version": "0.2.0",
+	"buildTimestamp": 1551886452650,
+	"scmRevision": "",
+	"libraries": [
+		{
+			"name": "sap.tnt",
+			"version": "1.62.1",
+			"buildTimestamp": 1551886452650,
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.m",
+			"version": "1.62.1",
+			"buildTimestamp": 1551886452650,
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.ui.core",
+			"version": "1.62.1",
+			"buildTimestamp": 1551886452650,
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.ui.unified",
+			"version": "1.62.1",
+			"buildTimestamp": 1551886452650,
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.ui.layout",
+			"version": "1.62.1",
+			"buildTimestamp": 1551886452650,
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.f",
+			"version": "1.62.1",
+			"buildTimestamp": 1551886452650,
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.ui.table",
+			"version": "1.62.1",
+			"buildTimestamp": 1551886452650,
+			"scmRevision": ""
+		}
+	]
+}

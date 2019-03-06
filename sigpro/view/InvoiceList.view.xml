@@ -1,0 +1,121 @@
+<mvc:View
+	id="invoiceListView"
+	height="100%"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:table="sap.ui.table"
+	controllerName="co.h2a.sigpro.ui.controller.InvoiceList"
+	displayBlock="true">
+
+	<semantic:SemanticPage
+		id="invoiceListPage"
+		headerPinnable="true"
+		toggleHeaderOnTitleClick="true"
+		preserveHeaderStateOnScroll="false"
+		showFooter="false">
+
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title text="{i18n>Invoice.PageTitle}" />
+		</semantic:titleHeading>
+
+		<semantic:addAction>
+			<semantic:AddAction press="onItemPress"/>
+		</semantic:addAction>
+
+		<semantic:closeAction>
+			<semantic:CloseAction press="onNavBack"/>
+		</semantic:closeAction>
+
+
+		<!-- Content -->
+		<semantic:content>
+			<table:Table class="sapFSemanticPageAlignContent"
+                id="tableInvoice"
+                rows="{/}"
+                selectionBehavior="RowOnly"
+                selectionMode="Single"
+                alternateRowColors="true"
+                enableBusyIndicator="true"
+                enableCellFilter="true"
+                enableColumnFreeze="true"
+                enableColumnReordering="true"
+                showColumnVisibilityMenu="true"
+                showOverlay="false"
+                threshold="10"
+                visibleRowCountMode="Auto"
+                width="auto"
+                rowActionCount="2"
+			height="100%">
+
+                <table:columns>
+					<table:Column autoResizable="true" filterProperty="id" visible="false">
+                        <Label text="ID" />
+                        <table:template><Text text="{id}" wrapping="false"/></table:template>
+                    </table:Column>
+                    <table:Column autoResizable="true" filterProperty="cliente" sortProperty="cliente" showSortMenuEntry="true">
+                        <Label text="{i18n>faturamentoCliente}" />
+                        <table:template><Text text="{cliente}" wrapping="false" /></table:template>
+                    </table:Column>
+                    <table:Column autoResizable="true" filterProperty="servico" sortProperty="servico" showSortMenuEntry="true">
+                        <Label text="{i18n>faturamentoServico}" />
+                        <table:template><Text text="{servico}" wrapping="false" /></table:template>
+                    </table:Column>
+                    <table:Column autoResizable="true" filterProperty="contrato" sortProperty="contrato" showSortMenuEntry="true">
+                        <Label text="{i18n>faturamentoContrato}" />
+                        <table:template><Text text="{contrato}" wrapping="false" /></table:template>
+                    </table:Column>
+                    <table:Column autoResizable="true" filterProperty="competencia" sortProperty="competencia" showSortMenuEntry="true" hAlign="Center">
+                        <Label text="{i18n>faturamentoCompetencia}" />
+                        <table:template><Text text="{competencia}" wrapping="false" /></table:template>
+                    </table:Column>
+                    <table:Column autoResizable="true" filterProperty="chamado" sortProperty="chamado" showSortMenuEntry="true" hAlign="Center">
+                        <Label text="{i18n>faturamentoChamado}" />
+                        <table:template><Text text="{chamado}" wrapping="false" /></table:template>
+                    </table:Column>
+                    <table:Column autoResizable="true" filterProperty="nro_venda" sortProperty="nro_venda" showSortMenuEntry="true" hAlign="Center">
+                        <Label text="{i18n>faturamentoNroVenda}" />
+                        <table:template><Text text="{nro_venda}" wrapping="false" /></table:template>
+                    </table:Column>
+                    <table:Column autoResizable="true" filterProperty="dt_entrega" sortProperty="dt_entrega" showSortMenuEntry="true" hAlign="Center">
+                        <Label text="{i18n>faturamentoDtEntrega}" />
+                        <table:template><Text text="{dt_entrega}" wrapping="false" /></table:template>
+                    </table:Column>
+                    <table:Column autoResizable="true" filterProperty="dt_faturamento" sortProperty="dt_faturamento" showSortMenuEntry="true" hAlign="Center">
+                        <Label text="{i18n>faturamentoDtFaturamento}" />
+                        <table:template><Text text="{dt_faturamento}" wrapping="false" /></table:template>
+                    </table:Column>
+                    <table:Column autoResizable="true" filterProperty="dt_vencimento" sortProperty="dt_vencimento" showSortMenuEntry="true" hAlign="Center">
+                        <Label text="{i18n>faturamentoDtVencimento}" />
+                        <table:template><Text text="{dt_vencimento}" wrapping="false" /></table:template>
+                    </table:Column>
+                    <table:Column autoResizable="true" filterProperty="nro_nf" sortProperty="nro_nf" showSortMenuEntry="true" hAlign="Center">
+                        <Label text="{i18n>faturamentoNroNf}" />
+                        <table:template><Text text="{nro_nf}" wrapping="false" /></table:template>
+                    </table:Column>
+                    <table:Column autoResizable="true" filterProperty="vlr_bruto" sortProperty="vlr_bruto" showSortMenuEntry="true" hAlign="Right">
+                        <Label text="{i18n>faturamentoVlrBruto}" />
+                        <table:template><Text text="{vlr_bruto}" wrapping="false" /></table:template>
+                    </table:Column>
+
+                </table:columns>
+
+                <table:rowActionTemplate>
+                    <table:RowAction>
+                        <table:RowActionItem press="onItemPress" type="Navigation"/>
+                        <table:RowActionItem press="onPressFaturamento" type="Delete"/>
+                        <table:RowActionItem press="onPressFaturamento" icon="sap-icon://print" text="Imprimir" type="Custom"/>
+                    </table:RowAction>
+                </table:rowActionTemplate>
+
+                <table:footer>
+
+                </table:footer>
+                
+            </table:Table>
+
+		</semantic:content>
+
+	</semantic:SemanticPage>
+</mvc:View>

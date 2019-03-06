@@ -1,0 +1,183 @@
+<mvc:View
+        id="invoiceListMobileView"
+        height="100%"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        xmlns:semantic="sap.f.semantic"
+        xmlns:table="sap.ui.table"
+        controllerName="co.h2a.sigpro.ui.controller.InvoiceList"
+        displayBlock="true">
+
+    <semantic:SemanticPage
+            id="invoiceListPage"
+            headerPinnable="true"
+            toggleHeaderOnTitleClick="true"
+            preserveHeaderStateOnScroll="false"
+            showFooter="false">
+
+        <!-- Title Heading-->
+        <semantic:titleHeading>
+            <Title text="{i18n>Invoice.PageTitle}" />
+        </semantic:titleHeading>
+
+        <!-- Header Content
+        <semantic:headerContent>
+            <layout:HorizontalLayout allowWrapping="true">
+                <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                    <ObjectAttribute title="Functional Area" text="{/objectDescription/category}"/>
+                    <ObjectAttribute title="Cost Center" text="{/objectDescription/center}"/>
+                    <ObjectAttribute title="Email" text="{/objectDescription/email}"/>
+                </layout:VerticalLayout>
+
+                <layout:VerticalLayout>
+                    <ObjectAttribute title="Availability"/>
+
+                    <ObjectStatus text="In Stock" state="{/objectDescription/status}" />
+                </layout:VerticalLayout>
+            </layout:HorizontalLayout>
+        </semantic:headerContent>
+        -->
+
+        <!-- Content -->
+        <semantic:content>
+
+            <Table
+                    id="invoiceTable"
+                    inset="false"
+                    items="{/}"
+                    class="sapFSemanticPageAlignContent"
+                    width="auto">
+
+                <columns>
+                    <Column><Text text="{i18n>Invoice.Customer}" sortIndicator="Ascending"/></Column>
+                    <Column><Text text="{i18n>Invoice.JobDescription}"/></Column>
+                    <Column><Text text="{i18n>Invoice.Contract}"/></Column>
+                    <Column><Text text="{i18n>Invoice.Period}"/></Column>
+                    <Column><Text text="{i18n>Invoice.Issue}"/></Column>
+                    <Column><Text text="{i18n>Invoice.NoSale}"/></Column>
+                    <Column><Text text="{i18n>Invoice.Delivery}"/></Column>
+                    <Column><Text text="{i18n>Invoice.Billed}"/></Column>
+                    <Column><Text text="{i18n>Invoice.Due}"/></Column>
+                    <Column><Text text="{i18n>Invoice.NoBill}"/></Column>
+                    <Column><Text text="{i18n>Invoice.Value}"/></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <ObjectIdentifier title="{cliente}" text="{id}"/>
+                            <Text text="{servico}"/>
+                            <Text text="{contrato}"/>
+                            <Text text="{competencia}"/>
+                            <Text text="{chamado}"/>
+                            <Text text="{nro_venda}"/>
+                            <Text text="{dt_entrega}"/>
+                            <Text text="{dt_faturamento}"/>
+                            <Text text="{dt_vencimento}"/>
+                            <Text text="{nro_nf}"/>
+                            <Text text="{vlr_bruto}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+        </semantic:content>
+
+        <semantic:titleMainAction>
+            <semantic:TitleMainAction text="Edit"/>
+        </semantic:titleMainAction>
+
+        <semantic:addAction>
+            <semantic:AddAction />
+        </semantic:addAction>
+
+        <semantic:deleteAction>
+            <semantic:DeleteAction />
+        </semantic:deleteAction>
+
+        <semantic:copyAction>
+            <semantic:CopyAction />
+        </semantic:copyAction>
+
+        <semantic:editAction>
+            <semantic:EditAction />
+        </semantic:editAction>
+
+        <semantic:favoriteAction>
+            <semantic:FavoriteAction />
+        </semantic:favoriteAction>
+
+        <semantic:flagAction>
+            <semantic:FlagAction />
+        </semantic:flagAction>
+
+        <semantic:closeAction>
+            <semantic:CloseAction press="onNavBack"/>
+        </semantic:closeAction>
+
+        <semantic:fullScreenAction>
+            <semantic:FullScreenAction visible="{/notMobile}"/>
+        </semantic:fullScreenAction>
+
+        <semantic:exitFullScreenAction>
+            <semantic:ExitFullScreenAction visible="{/notMobile}"/>
+        </semantic:exitFullScreenAction>
+
+        <!-- Custom Title Text Content-->
+        <semantic:titleCustomTextActions>
+            <Button text="ToggleFooter" press="showFooter"/>
+        </semantic:titleCustomTextActions>
+
+        <!-- Custom Title Icon Content-->
+        <semantic:titleCustomIconActions>
+            <OverflowToolbarButton icon="sap-icon://cart" text="cart" />
+        </semantic:titleCustomIconActions>
+
+        <!--Semantic ShareMenu Buttons-->
+        <semantic:discussInJamAction>
+            <semantic:DiscussInJamAction />
+        </semantic:discussInJamAction>
+
+        <semantic:shareInJamAction>
+            <semantic:ShareInJamAction />
+        </semantic:shareInJamAction>
+
+        <semantic:printAction>
+            <semantic:PrintAction />
+        </semantic:printAction>
+
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction />
+        </semantic:sendEmailAction>
+
+        <semantic:sendMessageAction>
+            <semantic:SendMessageAction />
+        </semantic:sendMessageAction>
+
+        <!-- Custom Share Actions -->
+        <semantic:customShareActions>
+            <Button icon= "sap-icon://bed" text="Bed" />
+            <Button icon= "sap-icon://flight" text="Flight" />
+        </semantic:customShareActions>
+
+        <!-- Semantic Footer Buttons -->
+        <semantic:positiveAction>
+            <semantic:PositiveAction />
+        </semantic:positiveAction>
+
+        <semantic:negativeAction>
+            <semantic:NegativeAction />
+        </semantic:negativeAction>
+
+        <semantic:messagesIndicator>
+            <semantic:MessagesIndicator press="onMessagesButtonPress"/>
+        </semantic:messagesIndicator>
+
+        <!-- Custom Footer Content-->
+        <semantic:footerCustomActions>
+            <Button text="Save" />
+            <Button text="Cancel" />
+        </semantic:footerCustomActions>
+
+    </semantic:SemanticPage>
+</mvc:View>

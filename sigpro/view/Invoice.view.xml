@@ -1,0 +1,109 @@
+<mvc:View
+	id="invoiceListView"
+	height="100%"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    controllerName="co.h2a.sigpro.ui.controller.Invoice">
+
+	<semantic:SemanticPage
+		id="invoiceListPage"
+		headerPinnable="true"
+		toggleHeaderOnTitleClick="true"
+		preserveHeaderStateOnScroll="false"
+		showFooter="true">
+
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title text="{i18n>Invoice.PageTitle}" />
+		</semantic:titleHeading>
+
+		<!-- Header Content -->
+		<semantic:headerContent>
+			<layout:HorizontalLayout allowWrapping="true">
+				<layout:VerticalLayout class="sapUiMediumMarginEnd">
+					<ObjectAttribute title="{i18n>Invoice.Customer}" text="{cliente}"/>
+					<ObjectAttribute title="{i18n>Invoice.Contract}" text="{contrato}"/>
+					<ObjectAttribute title="{i18n>Invoice.Period}" text="{competencia}"/>
+				</layout:VerticalLayout>
+
+				<layout:VerticalLayout>
+					<ObjectAttribute title="{i18n>Invoice.JobDescription}" text="{servico}"/>
+
+					<ObjectStatus title="{i18n>Invoice.Issue}" text="{chamado}" state="Information" />
+					<ObjectStatus title="{i18n>Invoice.Value}" text="{vlr_bruto}" state="Success" />
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+		</semantic:headerContent>
+
+
+		<semantic:titleMainAction>
+			<semantic:TitleMainAction text="{i18n>Save}" press="onSave"/>
+		</semantic:titleMainAction>
+
+		<semantic:closeAction>
+			<semantic:CloseAction press="onNavBack"/>
+		</semantic:closeAction>
+
+		<!-- Content -->
+		<semantic:content>
+
+
+            <f:SimpleForm
+                    id="formInvoice"
+					layout="ResponsiveGridLayout"
+					title="{i18n>Invoice.InvoiceId}: {id}"
+					labelSpanXL="4"
+					labelSpanL="3"
+					labelSpanM="4"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="0"
+					emptySpanL="4"
+					emptySpanM="0"
+					emptySpanS="0"
+					columnsXL="2"
+					columnsL="2"
+					columnsM="2"
+					singleContainerFullSize="false">
+
+				<core:Title text="{i18n>Invoice.Contract}"/>
+                <Label text="{i18n>Invoice.Customer}" required="true" />
+                <Input id="cliente" value="{cliente}" />
+                <Label text="{i18n>Invoice.JobDescription}" required="true" />
+                <Input id="servico" value="{servico}" />
+                <Label text="{i18n>Invoice.Contract}" required="true" />
+                <Input id="contrato" value="{contrato}" />
+				<Label text="{i18n>Invoice.NoSale}" required="true" />
+				<Input id="nro_venda" value="{nro_venda}" />
+
+				<core:Title text="{i18n>Invoice.JobDescription}"/>
+                <Label text="{i18n>Invoice.Period}" required="true" />
+                <Input id="competencia" value="{competencia}" />
+                <Label text="{i18n>Invoice.Issue}" required="true" />
+                <Input id="chamado" value="{chamado}" />
+                <Label text="{i18n>Invoice.Delivery}" required="true" />
+                <Input id="dt_entrega" value="{dt_entrega}" />
+
+
+				<core:Title text="{i18n>Invoice.TaxInfo}"/>
+				<Label text="{i18n>Invoice.Billed}" required="true" />
+                <Input id="dt_faturamento" value="{dt_faturamento}" />
+                <Label text="{i18n>Invoice.Due}" required="true" />
+                <Input id="dt_vencimento" value="{dt_vencimento}" />
+                <Label text="{i18n>Invoice.NoBill}" required="true" />
+                <Input id="nro_nf" value="{nro_nf}" />
+                <Label text="{i18n>Invoice.Value}" required="true" />
+                <Input id="vlr_bruto" value="{vlr_bruto}" />
+
+
+            </f:SimpleForm>
+			
+		</semantic:content>
+
+
+	</semantic:SemanticPage>
+</mvc:View>

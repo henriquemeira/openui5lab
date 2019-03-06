@@ -1,0 +1,54 @@
+<c:FragmentDefinition
+	xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    xmlns:semantic="sap.f.semantic">
+
+
+
+<Table
+    rows="{/ProductCollection}"
+    selectionMode="MultiToggle"
+    visibleRowCount="7"
+    paste="onPaste">
+    <columns>
+        <Column width="11rem">
+            <m:Label text="Product Name" />
+            <template>
+                <m:Text text="{Name}" wrapping="false" />
+            </template>
+        </Column>
+        <Column width="11rem">
+            <m:Label text="Product Id" />
+            <template>
+                <m:Input value="{ProductId}"/>
+            </template>
+        </Column>
+        <Column width="6rem" hAlign="End">
+            <m:Label text="Quantity" />
+            <template>
+                <m:Label text="{Quantity}" />
+            </template>
+        </Column>
+        <Column width="9rem">
+            <m:Label text="Status" />
+            <template>
+                <m:ObjectStatus text="{Status}" state="{
+                    path: 'Available',
+                    formatter: '.formatAvailableToObjectState'
+                }"/>
+            </template>
+        </Column>
+        <Column width="9rem">
+            <m:Label text="Price" />
+            <template>
+                <u:Currency value="{Price}" currency="{CurrencyCode}"/>
+            </template>
+        </Column>
+    </columns>
+</Table>
+
+					
+</c:FragmentDefinition>

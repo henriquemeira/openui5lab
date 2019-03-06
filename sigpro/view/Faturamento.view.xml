@@ -1,0 +1,146 @@
+<mvc:View 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+    xmlns="sap.m" 
+    busyIndicatorDelay="0"
+	controllerName="co.h2a.sigpro.ui.controller.Faturamento">
+
+    <Page id="page" title="{i18n>User.title}" showNavButton="true" navButtonPress="onNavBack">
+		<f:SimpleForm id="form" minWidth="800"
+					  maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+					  labelSpanL="3" labelSpanM="3" emptySpanL="3" emptySpanM="3"
+					  columnsL="1" columnsM="1">
+			<core:Title text="{i18n>General.edit}" />
+			<Label text="{i18n>User.email}" required="true" />
+			<Input id="email" type="Email" enabled="false" value="{email}" />
+			<Label text="{i18n>User.name}" required="true" />
+			<Input id="name" value="{name}" />
+			<Label text="{i18n>User.sex}" required="true" />
+			<Select id="sex" selectedKey="{gender}">
+				<core:Item key="F" text="{i18n>Female}" />
+				<core:Item key="M" text="{i18n>Male}" />
+			</Select>
+			<Label text="{i18n>User.birthdate}" required="true" />
+			<DatePicker id="birthdate" />
+			<Label text="{i18n>User.notification}" />
+			<Switch id="alert" />
+			<core:Title text="{i18n>User.security}" />
+			<Label text="{i18n>User.passwordOld}" />
+			<Input id="pwdOld" type="Password" value="{pwdOld}" />
+			<Label text="{i18n>User.passwordNew}" />
+			<Input id="pwd" type="Password" value="{pwd}" />
+			<Label text="{i18n>User.passwordRepeat}" />
+			<Input id="pwdRepeat" type="Password" value="{pwdRepeat}" />
+		</f:SimpleForm>
+		<footer>
+			<Toolbar>
+				<Button id="btMessagePopover" icon="sap-icon://message-popup" type="Reject"
+						text="{=${message>/}.length}"
+						visible="{=${message>/}.length > 0}"
+						press="onMessagePopoverPress"/>
+				<ToolbarSpacer />
+				<Button id="btSave" icon="sap-icon://save" text="{i18n>XBUT.save}" type="Emphasized" press="onSave" />
+			</Toolbar>
+		</footer>
+	</Page>
+
+<!--
+    <semantic:SemanticPage
+        id="fragmentPageFaturamento"
+        class="sapUiContentPadding" 
+		headerPinnable="true"
+        toggleHeaderOnTitleClick="true"
+        preserveHeaderStateOnScroll="false"
+        showFooter="true">
+
+        <semantic:titleHeading>
+            <m:Title text="Faturamento" />
+        </semantic:titleHeading>
+
+        <semantic:content>
+            <Table
+                id="tableFaturamento"
+                rows="{faturamentoModel>/}"
+                selectionBehavior="RowSelector"
+                selectionMode="None"
+                alternateRowColors="true"
+                enableBusyIndicator="true"
+                enableCellFilter="true"
+                enableColumnFreeze="true"
+                enableColumnReordering="true"
+                showColumnVisibilityMenu="true"
+                showOverlay="false"
+                threshold="10"
+                visibleRowCountMode="Auto"
+                width="auto"
+                rowActionCount="2">
+
+                <columns>
+                    <Column autoResizable="true" filterProperty="cliente" sortProperty="cliente" showSortMenuEntry="true">
+                        <m:Label text="{i18n>faturamentoCliente}" />
+                        <template><m:Text text="{faturamentoModel>cliente}" wrapping="false" /></template>
+                    </Column>
+                    <Column autoResizable="true" filterProperty="servico" sortProperty="servico" showSortMenuEntry="true">
+                        <m:Label text="{i18n>faturamentoServico}" />
+                        <template><m:Text text="{faturamentoModel>servico}" wrapping="false" /></template>
+                    </Column>
+                    <Column autoResizable="true" filterProperty="contrato" sortProperty="contrato" showSortMenuEntry="true">
+                        <m:Label text="{i18n>faturamentoContrato}" />
+                        <template><m:Text text="{faturamentoModel>contrato}" wrapping="false" /></template>
+                    </Column>
+                    <Column autoResizable="true" filterProperty="competencia" sortProperty="competencia" showSortMenuEntry="true" hAlign="Center">
+                        <m:Label text="{i18n>faturamentoCompetencia}" />
+                        <template><m:Text text="{faturamentoModel>competencia}" wrapping="false" /></template>
+                    </Column>
+                    <Column autoResizable="true" filterProperty="chamado" sortProperty="chamado" showSortMenuEntry="true" hAlign="Center">
+                        <m:Label text="{i18n>faturamentoChamado}" />
+                        <template><m:Text text="{faturamentoModel>chamado}" wrapping="false" /></template>
+                    </Column>
+                    <Column autoResizable="true" filterProperty="nro_venda" sortProperty="nro_venda" showSortMenuEntry="true" hAlign="Center">
+                        <m:Label text="{i18n>faturamentoNroVenda}" />
+                        <template><m:Text text="{faturamentoModel>nro_venda}" wrapping="false" /></template>
+                    </Column>
+                    <Column autoResizable="true" filterProperty="dt_entrega" sortProperty="dt_entrega" showSortMenuEntry="true" hAlign="Center">
+                        <m:Label text="{i18n>faturamentoDtEntrega}" />
+                        <template><m:Text text="{faturamentoModel>dt_entrega}" wrapping="false" /></template>
+                    </Column>
+                    <Column autoResizable="true" filterProperty="dt_faturamento" sortProperty="dt_faturamento" showSortMenuEntry="true" hAlign="Center">
+                        <m:Label text="{i18n>faturamentoDtFaturamento}" />
+                        <template><m:Text text="{faturamentoModel>dt_faturamento}" wrapping="false" /></template>
+                    </Column>
+                    <Column autoResizable="true" filterProperty="dt_vencimento" sortProperty="dt_vencimento" showSortMenuEntry="true" hAlign="Center">
+                        <m:Label text="{i18n>faturamentoDtVencimento}" />
+                        <template><m:Text text="{faturamentoModel>dt_vencimento}" wrapping="false" /></template>
+                    </Column>
+                    <Column autoResizable="true" filterProperty="nro_nf" sortProperty="nro_nf" showSortMenuEntry="true" hAlign="Center">
+                        <m:Label text="{i18n>faturamentoNroNf}" />
+                        <template><m:Text text="{faturamentoModel>nro_nf}" wrapping="false" /></template>
+                    </Column>
+                    <Column autoResizable="true" filterProperty="vlr_bruto" sortProperty="vlr_bruto" showSortMenuEntry="true" hAlign="Right">
+                        <m:Label text="{i18n>faturamentoVlrBruto}" />
+                        <template><m:Text text="{faturamentoModel>vlr_bruto}" wrapping="false" /></template>
+                    </Column>
+
+                </columns>
+
+                <rowActionTemplate>
+                    <RowAction>
+                        <RowActionItem press="onPressFaturamento" type="Navigation"/>
+                        <RowActionItem press="onPressFaturamento" type="Delete"/>
+                        <RowActionItem press="onPressFaturamento" icon="sap-icon://print" text="Imprimir" type="Custom"/>
+                    </RowAction>
+                </rowActionTemplate>
+
+                <footer>
+
+                </footer>
+                
+            </Table>
+
+
+        </semantic:content>
+
+    </semantic:SemanticPage>
+-->
+</mvc:View>

@@ -1,0 +1,36 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	xmlns:f="sap.ui.layout.form">
+
+    <f:SimpleForm busy="false" layout="ResponsiveGridLayout">
+
+        <f:content>
+
+            <SearchField maxLength="9" value="{model:'cepViewModel',path:'/searchTerm'}" placeholder="Digite o CEP" search="onCepSearch"/>
+            <!--<Input value="{cepViewModel>/searchTerm}" valueLiveUpdate="true" change="onCepSearch"/>-->
+                
+
+            <Label text="CEP"/> 
+            <Text text="{cepModel>/cep}"/>
+            <Label text="Logradouro"/> 
+            <Text text="{cepModel>/logradouro}"/>
+            <Label text="Complemento"/> 
+            <Text text="{cepModel>/complemento}"/>
+            <Label text="Bairro"/> 
+            <Text text="{cepModel>/bairro}"/>
+            <Label text="Localidade"/> 
+            <Text text="{cepModel>/localidade}"/>
+            <Label text="Estado"/>
+            <Text text="{cepModel>/uf}" />
+            <Label text="Unidade"/> 
+            <Text text="{cepModel>/Unidade}"/>
+            <Label text="IBGE"/> 
+            <Text text="{cepModel>/ibge}"/>
+            <Label text="GIA"/> 
+            <Text text="{cepModel>/gia}"/>
+
+        </f:content>
+    </f:SimpleForm>
+
+</c:FragmentDefinition>

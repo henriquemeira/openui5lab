@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/model/json/JSONModel","co/h2a/sigpro/ui/controller/BaseController"],function(o,e){"use strict";var t=e.extend("co.h2a.sigpro.ui.controller.Faturamento",{onInit:function(){this._oFaturamentoModel=new o("model/faturamento.json");this.getView().setModel(this._oFaturamentoModel,"faturamentoModel")}});return t});

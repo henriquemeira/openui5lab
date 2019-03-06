@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define([],function(){"use strict";var e={},t=sap.ui.getCore().getLibraryResourceBundle("sap.f");e.render=function(r,i){var a=i.getCardHeader();r.write("<div");r.writeElementData(i);r.addClass("sapFCard");r.writeClasses();r.addStyle("width",i.getWidth());r.addStyle("height",i.getHeight());r.writeAccessibilityState(i,{role:"region",roledescription:{value:t.getText("ARIA_ROLEDESCRIPTION_CARD"),append:true}});if(a){var d=a._getTitle();if(d){r.writeAccessibilityState(i,{labelledBy:{value:d.getId(),append:true}})}}r.writeStyles();r.write(">");r.renderControl(a);e.renderContentSection(r,i);r.write("</div>")};e.renderContentSection=function(e,r){var i=r.getCardContent();if(i){e.write("<div");e.addClass("sapFCardContent");e.writeClasses();e.writeAccessibilityState(r,{role:"group",label:{value:t.getText("ARIA_LABEL_CARD_CONTENT"),append:true}});e.write(">");e.renderControl(i);e.write("</div>")}};return e});

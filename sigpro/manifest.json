@@ -1,0 +1,186 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "co.h2a.sigpro.ui",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "resources": "resources.json",
+    "dataSources": {
+      "mainService": {
+        "uri": "/here/goes/your/serviceUrl/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        },
+        "init_data_alias": {
+          "uri": "model/init_data.json",
+          "type": "JSON"
+        }
+      }
+    }
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://task",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+
+    "dependencies": {
+      "minUI5Version": "1.60.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {}
+      }
+    },
+
+    "rootView": {
+      "viewName": "co.h2a.sigpro.ui.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "rootApp"
+    },
+
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "co.h2a.sigpro.ui.i18n.i18n"
+        }
+      },
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/todoitems.json"
+      }
+    },
+
+    "resources": {
+      "css": [
+        {
+          "uri": "css/styles.css"
+        }
+      ]
+    },
+
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "co.h2a.sigpro.ui.view",
+        "controlId": "idAppControl",
+        "controlAggregation": "pages",
+        "bypassed": {
+          "target": "notFound"
+        },
+        "async": true
+      },
+
+      "routes": [{
+        "pattern": "",
+        "name": "home",
+        "target": "home"
+      },{
+        "pattern": "toolpage",
+        "name": "toolpage",
+        "target": "toolpage"
+      },
+        {
+          "pattern": "ProductSet/{objectId}",
+          "name": "object",
+          "target": "object"
+        },
+        {
+          "pattern": "invoiceList",
+          "name": "invoiceList",
+          "target": "invoiceList"
+        },
+        {
+          "pattern": "invoiceListMobile",
+          "name": "invoiceListMobile",
+          "target": "invoiceListMobile"
+        },
+        {
+          "pattern": "invoice/{invoiceId}",
+          "name": "invoice",
+          "target": "invoice"
+        },
+        {
+          "pattern": "invoiceNew",
+          "name": "invoiceNew",
+          "target": "invoiceNew"
+        }
+      ],
+
+      "targets": {
+        "home": {
+          "viewName": "Home",
+          "viewId": "home",
+          "viewLevel": 1,
+          "title": "Home"
+        },
+        "toolpage": {
+          "viewName": "ToolPage",
+          "viewId": "toolpage",
+          "viewLevel": 1,
+          "title": "ToolPage"
+        },
+        "notFound": {
+          "viewName": "NotFound",
+          "viewId": "notFound"
+        },
+        "object": {
+          "viewName": "Object",
+          "viewId": "object",
+          "viewLevel": 2
+        },
+        "invoiceList": {
+          "viewName": "InvoiceList",
+          "viewId": "invoiceList",
+          "viewLevel": 2
+        },
+        "invoiceListMobile": {
+          "viewName": "InvoiceListMobile",
+          "viewId": "invoiceListMobile",
+          "viewLevel": 2
+        },
+        "invoice": {
+          "viewId": "invoice",
+          "viewName": "Invoice",
+          "viewLevel": 3
+        },
+        "invoiceNew": {
+          "viewId": "invoiceNew",
+          "viewName": "InvoiceNew",
+          "viewLevel": 3
+        }
+
+      }
+    }
+
+  }
+}

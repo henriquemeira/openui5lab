@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2019 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/ui/support/library","sap/base/Log"],function(e,r){"use strict";var i=e.Audiences,t=e.Categories,n=e.Severity;var u={DOCU_REF:"https://ui5.sap.com/",DEFAULT_RULE_DEF:{audiences:[i.Application],categories:[t.Other],enabled:true,minversion:"1.38",maxversion:"-",title:"",description:"",resolution:"",resolutionurls:[],check:function(e,r,i){}},normalizeRule:function(e){return jQuery.extend({},u.DEFAULT_RULE_DEF,e)},addRuleToRuleset:function(e,i){e=u.normalizeRule(e);var t=i.addRule(e);if(t!="success"){r.warning("Support Rule '"+e.id+"' for library sap.ui.table not applied: "+t)}},createDocuRef:function(e,r){return{text:e,href:u.DOCU_REF+r}},reportIssue:function(e,r,i,t){e.addIssue({severity:i||n.Medium,details:r,context:{id:t||"WEBPAGE"}})},find:function(e,r,i){var t=e.getElements();var n=[];for(var u in t){var o=t[u];if(o.isA(i)){if(r&&o.getDomRef()||!r){n.push(o)}}}return n},checkLogEntries:function(e,i){var t=r.getLogEntries();var n;for(var u=0;u<t.length;u++){n=t[u];if(e(n)){if(i(n)){return}}}}};return u},true);
