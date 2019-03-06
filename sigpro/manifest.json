@@ -133,6 +133,11 @@
           "pattern": "invoiceNew",
           "name": "invoiceNew",
           "target": "invoiceNew"
+        },
+        {
+          "pattern": "cep",
+          "name": "cep",
+          "target": "cep"
         }
       ],
 
@@ -177,6 +182,12 @@
           "viewId": "invoiceNew",
           "viewName": "InvoiceNew",
           "viewLevel": 3
+        },
+        "cep": {
+          "viewId": "cep",
+          "viewName": "Cep",
+          "viewLevel": 2,
+          "transition": "flip"
         }
 
       }

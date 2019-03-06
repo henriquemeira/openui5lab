@@ -1,0 +1,89 @@
+<mvc:View
+        id="invoiceListView"
+        height="100%"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        xmlns:layout="sap.ui.layout"
+        xmlns:semantic="sap.f.semantic"
+        xmlns:f="sap.ui.layout.form"
+        controllerName="co.h2a.sigpro.ui.controller.Cep">
+
+    <semantic:SemanticPage
+            id="cepPage"
+            headerPinnable="true"
+            toggleHeaderOnTitleClick="true"
+            preserveHeaderStateOnScroll="false"
+            showFooter="true">
+
+        <!-- Title Heading-->
+        <semantic:titleHeading>
+            <Title text="{i18n>Menu.CEP}" />
+        </semantic:titleHeading>
+
+        <!-- Header Content
+        <semantic:headerContent>
+            <layout:HorizontalLayout allowWrapping="true">
+                <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                    <ObjectAttribute title="{i18n>Invoice.Customer}" text="{cliente}"/>
+                    <ObjectAttribute title="{i18n>Invoice.Contract}" text="{contrato}"/>
+                    <ObjectAttribute title="{i18n>Invoice.Period}" text="{competencia}"/>
+                </layout:VerticalLayout>
+
+                <layout:VerticalLayout>
+                    <ObjectAttribute title="{i18n>Invoice.JobDescription}" text="{servico}"/>
+
+                    <ObjectStatus title="{i18n>Invoice.Issue}" text="{chamado}" state="Information" />
+                    <ObjectStatus title="{i18n>Invoice.Value}" text="{vlr_bruto}" state="Success" />
+                </layout:VerticalLayout>
+            </layout:HorizontalLayout>
+        </semantic:headerContent>
+
+
+        <semantic:titleMainAction>
+            <semantic:TitleMainAction text="{i18n>Save}" press="onSave"/>
+        </semantic:titleMainAction>
+        -->
+
+        <semantic:closeAction>
+            <semantic:CloseAction press="onNavBack"/>
+        </semantic:closeAction>
+
+        <!-- Content -->
+        <semantic:content>
+
+
+            <f:SimpleForm busy="false" layout="ResponsiveGridLayout">
+
+                <f:content>
+
+                    <SearchField maxLength="9" value="{model:'cepViewModel',path:'/searchTerm'}" placeholder="Digite o CEP" search="onCepSearch"/>
+                    <!--<Input value="{cepViewModel>/searchTerm}" valueLiveUpdate="true" change="onCepSearch"/>-->
+
+
+                    <Label text="CEP"/>
+                    <Text text="{cepModel>/cep}"/>
+                    <Label text="Logradouro"/>
+                    <Text text="{cepModel>/logradouro}"/>
+                    <Label text="Complemento"/>
+                    <Text text="{cepModel>/complemento}"/>
+                    <Label text="Bairro"/>
+                    <Text text="{cepModel>/bairro}"/>
+                    <Label text="Localidade"/>
+                    <Text text="{cepModel>/localidade}"/>
+                    <Label text="Estado"/>
+                    <Text text="{cepModel>/uf}" />
+                    <Label text="Unidade"/>
+                    <Text text="{cepModel>/Unidade}"/>
+                    <Label text="IBGE"/>
+                    <Text text="{cepModel>/ibge}"/>
+                    <Label text="GIA"/>
+                    <Text text="{cepModel>/gia}"/>
+
+                </f:content>
+            </f:SimpleForm>
+
+        </semantic:content>
+
+
+    </semantic:SemanticPage>
+</mvc:View>

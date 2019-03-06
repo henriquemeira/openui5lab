@@ -21,16 +21,18 @@
                     </TileContent>
                 </tileContent>
             </GenericTile>
-            <!--
-            <GenericTile class="sapUiSmallMargin" header="{i18n>Menu.account}" press="onAccount">
+
+            <GenericTile class="sapUiSmallMargin" header="{i18n>Menu.CEP}" press="onSelectCep">
                 <tileContent>
                     <TileContent>
                         <content>
-                            <NumericContent id="accountTile" nullifyValue="false" icon="sap-icon://folder"/>
+                            <NumericContent id="accountTile" nullifyValue="false" icon="sap-icon://letter"/>
                         </content>
                     </TileContent>
                 </tileContent>
             </GenericTile>
+
+            <!--
             <GenericTile class="sapUiSmallMargin" header="{i18n>Menu.category}" press="onCategory">
                 <tileContent>
                     <TileContent>

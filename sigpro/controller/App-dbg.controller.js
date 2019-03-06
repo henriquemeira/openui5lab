@@ -79,7 +79,17 @@ sap.ui.define([
 				
 			}
 			this.getRouter().navTo('invoiceList');
-		}
+		},
+
+        onSelectCep: function(oEvent) {
+            try {
+                this._toogleShellOverlay();
+            } catch(oEx) {
+
+            }
+            this.getRouter().navTo('cep');
+        }
+
 
 	});
 
